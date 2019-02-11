@@ -6,7 +6,7 @@ from .models import Item
 class RestaurantForm(forms.ModelForm):
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ['name', 'description', 'opening_time', 'closing_time']
 
         widgets = {
         	'opening_time': forms.TimeInput(attrs={'type':'time'}),
