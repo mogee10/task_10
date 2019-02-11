@@ -1,6 +1,7 @@
 from django import forms
 from .models import Restaurant
 from django.contrib.auth.models import User
+from .models import Item
 
 class RestaurantForm(forms.ModelForm):
     class Meta:
@@ -25,3 +26,8 @@ class SignupForm(forms.ModelForm):
 class SigninForm(forms.Form):
     username = forms.CharField(required=True)
     password = forms.CharField(required=True, widget=forms.PasswordInput())
+
+class ItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['name', 'description', 'price']
